@@ -29,13 +29,19 @@ def signup():
     verify_pw = ''
     email = email
 
-  if len(email) < 3 or len(email) > 20:
-    email_error = "Please enter valid email."
-    password = ''
-    verify_pw = ''
+  if len(email) >= 1:
+    if "@" not in email or '.' not in email:
+      email_error = "Please enter valid email."
+      password = ''
+      verify_pw = ''
 
-  if "@" not in email or '.' not in email:
-    email_error = "Please enter valid email."
+    if len(email) < 3 or len(email) > 20:
+      email_error = "Please enter valid email."
+      password = ''
+      verify_pw = ''
+
+  if len(password) < 3 or len(password) > 20:
+    verify_pw_error = "Password must be between 3-20 characters."
     password = ''
     verify_pw = ''
 
